@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="Veterans community visual">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f7efe3"/><stop offset=".52" stop-color="#d8c3a8"/><stop offset="1" stop-color="#13294b"/></linearGradient>
+    <linearGradient id="flag" x1="0" x2="1"><stop offset="0" stop-color="#9b2335"/><stop offset="1" stop-color="#13294b"/></linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="145" fill="#fffdf8" opacity=".42"/>
+  <path d="M0 538 C210 448 330 500 500 438 C680 372 835 405 1200 350 L1200 760 L0 760 Z" fill="#172b4d" opacity=".94"/>
+  <path d="M0 610 C270 540 420 585 620 512 C800 448 980 490 1200 470 L1200 760 L0 760 Z" fill="#0f1d33" opacity=".96"/>
+  <g transform="translate(145 185)">
+    <rect x="0" y="0" width="370" height="235" rx="16" fill="#fffdf8" opacity=".88"/>
+    <rect x="34" y="36" width="130" height="92" fill="#13294b"/>
+    <g fill="#fffdf8" opacity=".95">
+      <circle cx="52" cy="54" r="4"/><circle cx="78" cy="54" r="4"/><circle cx="104" cy="54" r="4"/><circle cx="130" cy="54" r="4"/>
+      <circle cx="52" cy="78" r="4"/><circle cx="78" cy="78" r="4"/><circle cx="104" cy="78" r="4"/><circle cx="130" cy="78" r="4"/>
+      <circle cx="52" cy="102" r="4"/><circle cx="78" cy="102" r="4"/><circle cx="104" cy="102" r="4"/><circle cx="130" cy="102" r="4"/>
+    </g>
+    <rect x="164" y="36" width="172" height="18" fill="#9b2335"/><rect x="164" y="72" width="172" height="18" fill="#9b2335"/><rect x="34" y="128" width="302" height="18" fill="#9b2335"/><rect x="34" y="164" width="302" height="18" fill="#9b2335"/>
+  </g>
+  <g transform="translate(560 415)">
+    <circle cx="72" cy="-130" r="50" fill="#c79b7d"/>
+    <path d="M18 -70 C44 -106 100 -106 126 -70 L168 145 L-24 145 Z" fill="#f0e2ce"/>
+    <path d="M48 -10 L94 145 H42 Z" fill="#13294b"/>
+  </g>
+  <g transform="translate(720 430)">
+    <circle cx="72" cy="-125" r="48" fill="#8f624d"/>
+    <path d="M18 -64 C45 -100 100 -100 127 -64 L168 132 L-24 132 Z" fill="#9b2335"/>
+    <path d="M46 -4 L98 132 H42 Z" fill="#fffdf8" opacity=".92"/>
+  </g>
+  <g transform="translate(870 420)">
+    <circle cx="72" cy="-128" r="49" fill="#bd8d70"/>
+    <path d="M18 -66 C45 -102 100 -102 128 -66 L168 140 L-24 140 Z" fill="#243a58"/>
+    <path d="M44 -5 L98 140 H42 Z" fill="#f5efe5" opacity=".95"/>
+  </g>
+  <g transform="translate(390 435)">
+    <circle cx="72" cy="-122" r="47" fill="#d3a27d"/>
+    <path d="M18 -62 C44 -96 100 -96 126 -62 L164 125 L-20 125 Z" fill="#2f5482"/>
+    <path d="M42 -5 L95 125 H40 Z" fill="#fffdf8" opacity=".9"/>
+  </g>
+  <text x="78" y="660" fill="#fffdf8" font-family="Georgia, serif" font-size="52" letter-spacing="-1.5">Veterans helping veterans</text>
+</svg>
