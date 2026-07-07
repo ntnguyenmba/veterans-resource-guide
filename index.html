@@ -4,21 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DAV Chapter 246 | Veterans Resource Guide | Tarrant County, Texas</title>
-  <meta name="description" content="Official DAV Chapter 246 Veterans Resource Guide for Tarrant County, Texas." />
+  <meta name="description" content="Polished web version of the DAV Chapter 246 Veterans Resource Guide for Tarrant County, Texas." />
   <style>
     :root {
-      --navy: #172b4d;
-      --blue: #244a7c;
-      --red: #9f2434;
-      --cream: #f7f4ee;
-      --stone: #e7e0d4;
+      --ink: #18202b;
+      --muted: #5d6673;
+      --navy: #13294b;
+      --slate: #25384f;
+      --blue: #2f5482;
+      --red: #9b2335;
       --paper: #fffdf8;
-      --ink: #1f2933;
-      --muted: #667085;
-      --line: #d7ccbd;
-      --bronze: #9a7a52;
-      --shadow: 0 18px 45px rgba(23, 43, 77, .10);
-      --radius: 22px;
+      --warm: #f5efe5;
+      --stone: #e4d9ca;
+      --line: #d4c7b5;
+      --bronze: #8e6f4e;
+      --card: rgba(255, 253, 248, .96);
+      --shadow: 0 22px 60px rgba(19, 41, 75, .12);
+      --radius: 24px;
       --serif: Georgia, "Times New Roman", serif;
       --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
@@ -28,354 +30,182 @@
     body {
       margin: 0;
       color: var(--ink);
-      background: linear-gradient(180deg, #f5f0e8 0%, #fffdf8 34%, #f7f4ee 100%);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(142,111,78,.16), transparent 28%),
+        linear-gradient(180deg, #f6f0e7 0%, #fffdf8 38%, #f5efe5 100%);
       font-family: var(--sans);
       line-height: 1.65;
     }
-    a { color: var(--blue); text-decoration: none; }
+    a { color: var(--blue); text-decoration: none; font-weight: 800; }
     a:hover { text-decoration: underline; }
-    .wrap { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
+    p { margin-top: 0; }
+    .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 50;
+      background: rgba(255, 253, 248, .94);
+      border-bottom: 1px solid var(--line);
       backdrop-filter: blur(18px);
-      background: rgba(255, 253, 248, .88);
-      border-bottom: 1px solid rgba(215, 204, 189, .8);
     }
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 14px 0;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: .04em;
-      color: var(--navy);
-      text-transform: uppercase;
-      font-size: 13px;
-    }
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      color: white;
-      background: radial-gradient(circle at 30% 30%, #d7e1ef, var(--blue) 35%, var(--navy) 100%);
-      box-shadow: inset 0 0 0 2px rgba(255,255,255,.35);
-    }
-    .nav { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; }
-    .nav a { color: var(--navy); font-weight: 700; }
-    .print-btn {
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; color: var(--navy); text-transform: uppercase; letter-spacing: .07em; font-size: 12px; font-weight: 900; }
+    .brand-mark { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: var(--navy); border: 2px solid var(--bronze); }
+    .nav { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-size: 13px; }
+    .nav a { color: var(--navy); }
+    .actions { display: flex; gap: 10px; align-items: center; }
+    button, .button-link { font: inherit; }
+    .small-btn, .ask-open {
       border: 1px solid var(--line);
       background: var(--paper);
-      padding: 9px 14px;
-      border-radius: 999px;
-      font-weight: 800;
       color: var(--navy);
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-weight: 900;
       cursor: pointer;
+      white-space: nowrap;
     }
+    .ask-open { background: var(--navy); color: white; border-color: var(--navy); }
+
     .hero {
       position: relative;
+      min-height: 720px;
+      display: grid;
+      align-items: end;
       overflow: hidden;
-      border-bottom: 1px solid var(--line);
+      color: white;
+      background: var(--navy);
     }
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(23,43,77,.95), rgba(23,43,77,.72), rgba(23,43,77,.28)),
-        url("assets/cover-veterans.jpg") center/cover no-repeat;
-      z-index: -2;
+        linear-gradient(90deg, rgba(19,41,75,.96) 0%, rgba(19,41,75,.82) 48%, rgba(19,41,75,.38) 100%),
+        url("assets/cover-veterans.svg") center/cover no-repeat;
     }
     .hero::after {
       content: "";
       position: absolute;
       inset: auto 0 0 0;
-      height: 140px;
-      background: linear-gradient(180deg, rgba(247,244,238,0), var(--cream));
-      z-index: -1;
+      height: 180px;
+      background: linear-gradient(180deg, transparent, var(--warm));
     }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 32px;
-      align-items: end;
-      padding: 78px 0 64px;
-      color: white;
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: 999px;
-      background: rgba(255,255,255,.10);
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      font-size: 12px;
-    }
-    .hero h1 {
-      max-width: 820px;
-      margin: 22px 0 18px;
-      font-family: var(--serif);
-      font-size: clamp(44px, 7vw, 86px);
-      line-height: .95;
-      letter-spacing: -.045em;
-      font-weight: 500;
-    }
-    .hero p { max-width: 720px; color: rgba(255,255,255,.88); font-size: 19px; }
-    .hero-card {
-      padding: 24px;
-      border-radius: var(--radius);
-      background: rgba(255,253,248,.94);
-      color: var(--ink);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,.55);
-    }
-    .hero-card h2 { margin: 0 0 10px; color: var(--navy); font-family: var(--serif); font-weight: 500; font-size: 30px; }
-    .hero-card strong { color: var(--red); }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--navy);
-      color: white;
-      font-weight: 800;
-      font-size: 14px;
-    }
-    .btn.alt { background: var(--paper); color: var(--navy); }
-    .btn.red { background: var(--red); }
+    .hero-content { position: relative; z-index: 1; display: grid; grid-template-columns: 1.15fr .85fr; gap: 34px; align-items: end; padding: 90px 0 88px; }
+    .eyebrow { display: inline-flex; width: fit-content; color: white; border: 1px solid rgba(255,255,255,.42); background: rgba(255,255,255,.10); border-radius: 999px; padding: 8px 12px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 900; }
+    h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(48px, 7vw, 92px); line-height: .92; letter-spacing: -.055em; margin: 22px 0; color: white; }
+    .hero-lede { max-width: 760px; font-size: 20px; color: rgba(255,255,255,.92); }
+    .hero-card { background: rgba(255,253,248,.97); color: var(--ink); border: 1px solid rgba(255,255,255,.68); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); }
+    .hero-card h2 { color: var(--navy); margin-top: 0; }
+    .hero-card a { color: var(--red); }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 13px 17px; font-weight: 900; border: 1px solid var(--navy); background: var(--navy); color: white; }
+    .btn.red { background: var(--red); border-color: var(--red); color: white; }
+    .btn.light { background: white; color: var(--navy); }
+
     main { padding: 34px 0 80px; }
-    section {
-      scroll-margin-top: 96px;
-      margin: 28px 0;
-    }
-    .section-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255,253,248,.92);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .section-head {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 18px;
-      padding: 30px;
-      background: linear-gradient(135deg, #fffdf8, #f1ebe1);
-      border-bottom: 1px solid var(--line);
-    }
-    .chapter-label {
-      color: var(--red);
-      font-weight: 900;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      font-size: 12px;
-    }
-    h2 {
-      margin: 6px 0 0;
-      color: var(--navy);
-      font-family: var(--serif);
-      font-size: clamp(30px, 4vw, 48px);
-      line-height: 1.05;
-      letter-spacing: -.035em;
-      font-weight: 500;
-    }
+    section { scroll-margin-top: 92px; margin: 28px 0; }
+    .section-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .section-head { padding: 32px; border-bottom: 1px solid var(--line); background: linear-gradient(135deg, #fffdf8, #f0e6d8); }
+    .chapter-label { color: var(--red); font-size: 12px; font-weight: 950; letter-spacing: .14em; text-transform: uppercase; }
+    h2 { font-family: var(--serif); font-size: clamp(30px, 4vw, 50px); line-height: 1.05; letter-spacing: -.04em; font-weight: 500; color: var(--navy); margin: 8px 0 0; }
     h3 { color: var(--navy); margin: 22px 0 8px; font-size: 21px; line-height: 1.25; }
-    .section-body { padding: 30px; }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .section-body { padding: 32px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .grid.two { grid-template-columns: repeat(2, 1fr); }
-    .tile {
-      padding: 20px;
-      border-radius: 18px;
-      background: #fffaf1;
-      border: 1px solid var(--line);
-    }
-    .tile h3 { margin-top: 0; }
+    .tile, .resource, .quick-item, .official-link { background: #fffaf2; border: 1px solid var(--line); border-radius: 20px; padding: 20px; color: var(--ink); }
+    .tile h3, .resource h3 { margin-top: 0; }
     .muted { color: var(--muted); }
-    .toc {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 18px;
-    }
-    .toc a {
-      display: block;
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
+    .toc { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 18px; }
+    .toc a { display: block; padding: 15px; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); color: var(--navy); }
+    .quick-guide, .directory, .map-list, .official-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .quick-item { display: flex; gap: 14px; background: white; }
+    .num { flex: 0 0 auto; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: #fff; font-weight: 950; }
+    .tip, .urgent, .note, .coverage-note { border: 1px solid var(--line); border-radius: 20px; margin: 22px 0; padding: 18px 20px; background: #f7efe3; color: var(--ink); }
+    .urgent { background: #fff0f1; border-color: #d8a6ae; }
+    .note { background: #eef3f7; border-color: #c2d2e2; }
+    .coverage-note { background: #efe7db; border-color: var(--bronze); }
+    .photo-row { display: grid; grid-template-columns: 1.2fr .8fr; gap: 18px; margin: 24px 0; }
+    .photo { min-height: 330px; border-radius: var(--radius); border: 1px solid var(--line); overflow: hidden; background: #ddd center/cover no-repeat; box-shadow: 0 16px 40px rgba(19,41,75,.10); }
+    .photo.community { background-image: url("assets/veterans-community.svg"); }
+    .photo.service { background-image: url("assets/dav-service-officer.svg"); }
+    .split-feature { display: grid; grid-template-columns: .9fr 1.1fr; gap: 22px; align-items: center; }
+    .official-link { display: block; background: white; color: var(--navy); }
+    .official-link span { display: block; color: var(--muted); font-weight: 600; margin-top: 5px; }
+
+    .ask-panel {
+      position: fixed;
+      inset: auto 18px 18px auto;
+      width: min(430px, calc(100vw - 36px));
       background: var(--paper);
-      color: var(--navy);
-      font-weight: 800;
-    }
-    .tip, .urgent, .note {
-      margin: 22px 0;
-      padding: 18px 20px;
-      border-radius: 18px;
+      color: var(--ink);
       border: 1px solid var(--line);
-      background: #f8f1e6;
-    }
-    .urgent { background: #fff1f2; border-color: #e5b3ba; }
-    .note { background: #eef3fa; border-color: #c9d8ec; }
-    .tip strong, .urgent strong, .note strong { color: var(--navy); }
-    ul { padding-left: 20px; }
-    li { margin: 6px 0; }
-    .quick-guide {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-    .quick-item {
-      display: flex;
-      gap: 14px;
-      padding: 16px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: white;
-    }
-    .num {
-      flex: 0 0 auto;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      color: white;
-      background: var(--navy);
-      font-weight: 900;
-    }
-    .photo-row {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 18px;
-      margin: 24px 0;
-    }
-    .photo {
-      min-height: 280px;
-      border-radius: var(--radius);
-      background:
-        linear-gradient(135deg, rgba(23,43,77,.82), rgba(159,36,52,.42)),
-        var(--image, url("assets/veterans-community.jpg")) center/cover no-repeat;
-      border: 1px solid var(--line);
-      overflow: hidden;
-      position: relative;
-    }
-    .photo.small { min-height: 280px; --image: url("assets/dav-service-officer.jpg"); }
-    .photo-caption {
-      position: absolute;
-      left: 18px;
-      bottom: 18px;
-      right: 18px;
-      color: white;
-      font-weight: 800;
-      text-shadow: 0 2px 10px rgba(0,0,0,.25);
-    }
-    .directory {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-    .resource {
+      border-radius: 24px;
+      box-shadow: 0 28px 80px rgba(19,41,75,.24);
       padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: white;
+      z-index: 80;
+      display: none;
     }
-    .resource h3 { margin-top: 0; }
-    .qr-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-    .qr-card {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 16px;
-      background: white;
-      text-align: center;
-    }
-    .qr-card img { width: 112px; height: 112px; image-rendering: crisp-edges; }
-    .map-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-    .footer {
-      padding: 40px 0;
-      background: var(--navy);
-      color: rgba(255,255,255,.86);
-    }
-    .footer h2 { color: white; }
-    .footer a { color: white; }
-    .disclaimer {
-      border-top: 1px solid rgba(255,255,255,.2);
-      margin-top: 24px;
-      padding-top: 20px;
-      font-size: 13px;
-    }
-    @media (max-width: 900px) {
-      .hero-grid, .grid, .grid.two, .toc, .quick-guide, .photo-row, .directory, .qr-grid, .map-list { grid-template-columns: 1fr; }
+    .ask-panel.open { display: block; }
+    .ask-head { display: flex; justify-content: space-between; gap: 12px; align-items: start; margin-bottom: 12px; }
+    .ask-head h3 { margin: 0; font-family: var(--serif); font-weight: 500; font-size: 28px; }
+    .ask-close { border: none; background: var(--warm); color: var(--navy); border-radius: 999px; width: 34px; height: 34px; cursor: pointer; font-weight: 900; }
+    .ask-panel input { width: 100%; border: 1px solid var(--line); border-radius: 16px; padding: 13px 14px; color: var(--ink); background: white; font: inherit; }
+    .ask-results { margin-top: 12px; display: grid; gap: 10px; max-height: 300px; overflow: auto; }
+    .ask-result { display: block; border: 1px solid var(--line); background: #fffaf2; color: var(--ink); border-radius: 16px; padding: 12px; }
+    .ask-result strong { color: var(--navy); display: block; }
+    .ask-result small { color: var(--muted); }
+
+    footer { background: var(--navy); color: rgba(255,255,255,.9); padding: 44px 0; }
+    footer h2 { color: white; }
+    footer a { color: white; }
+    .disclaimer { border-top: 1px solid rgba(255,255,255,.22); margin-top: 24px; padding-top: 18px; font-size: 13px; }
+
+    @media (max-width: 920px) {
+      .hero-content, .grid, .grid.two, .toc, .quick-guide, .directory, .map-list, .official-links, .photo-row, .split-feature { grid-template-columns: 1fr; }
       .nav { display: none; }
-      .section-head { grid-template-columns: 1fr; }
-      .hero { background: var(--navy); }
+      .hero { min-height: auto; }
+      .hero-content { padding: 64px 0; }
+      h1 { font-size: clamp(44px, 14vw, 66px); }
     }
     @media print {
-      .topbar, .print-btn, .cta-row { display: none !important; }
+      .topbar, .ask-panel, .cta-row { display: none !important; }
       body { background: white; color: #111; }
       .wrap { width: 100%; }
-      .hero { color: #111; border: none; }
+      .hero { min-height: auto; color: #111; background: white; }
       .hero::before, .hero::after { display: none; }
-      .hero-grid { color: #111; padding: 20px 0; }
-      .section-card, .tile, .resource, .qr-card, .tip, .urgent, .note { box-shadow: none; break-inside: avoid; }
+      .hero-content { color: #111; display: block; padding: 20px 0; }
+      h1 { color: #111; }
+      .hero-lede { color: #111; }
+      .section-card, .tile, .resource, .quick-item, .official-link, .tip, .urgent, .note { box-shadow: none; break-inside: avoid; }
       a { color: #111; text-decoration: none; }
-      section { break-inside: avoid; }
     }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="wrap topbar-inner">
-      <a class="brand" href="#top" aria-label="DAV Chapter 246 home">
-        <span class="brand-mark">DAV</span>
-        <span>Chapter 246 | Tarrant County</span>
-      </a>
+      <a class="brand" href="#top" aria-label="DAV Chapter 246 guide home"><span class="brand-mark">DAV</span><span>Chapter 246 | Tarrant County</span></a>
       <nav class="nav" aria-label="Guide navigation">
-        <a href="#start">Start</a>
-        <a href="#claims">Claims</a>
-        <a href="#health">Health</a>
-        <a href="#housing">Housing</a>
-        <a href="#directory">Directory</a>
-        <a href="#qr">QR</a>
+        <a href="#start">Start</a><a href="#claims">Claims</a><a href="#health">Health</a><a href="#housing">Housing</a><a href="#directory">Directory</a><a href="#official-links">Links</a>
       </nav>
-      <button class="print-btn" onclick="window.print()">Print Guide</button>
+      <div class="actions"><button class="ask-open" type="button" onclick="toggleAsk(true)">Ask Guide</button><button class="small-btn" type="button" onclick="window.print()">Print</button></div>
     </div>
   </header>
 
+  <aside class="ask-panel" id="askPanel" aria-label="Ask Guide search panel">
+    <div class="ask-head"><div><h3>Ask Guide</h3><p class="muted">Search this guide for the right section. This is a simple guide search, not AI advice.</p></div><button class="ask-close" onclick="toggleAsk(false)" aria-label="Close Ask Guide">×</button></div>
+    <input id="askInput" type="search" placeholder="Try claims, housing, food, crisis, education..." oninput="runGuideSearch(this.value)" />
+    <div class="ask-results" id="askResults"></div>
+  </aside>
+
   <section class="hero" id="top">
-    <div class="wrap hero-grid">
+    <div class="wrap hero-content">
       <div>
         <span class="eyebrow">2026-2027 Edition</span>
         <h1>Official Veterans Resource Guide</h1>
-        <p>Prepared for veterans, service members, families, caregivers, and survivors in Tarrant County, Texas.</p>
-        <div class="cta-row">
-          <a class="btn red" href="tel:2148310298">Call DAV Chapter 246</a>
-          <a class="btn alt" href="#start">Find Help Fast</a>
-        </div>
+        <p class="hero-lede">A polished, easy-to-use Tarrant County resource guide for veterans, service members, families, caregivers, and survivors.</p>
+        <div class="cta-row"><a class="btn red" href="tel:2148310298">Call DAV Chapter 246</a><a class="btn light" href="#start">Find Help Fast</a><button class="btn" type="button" onclick="toggleAsk(true)">Ask Guide</button></div>
       </div>
       <aside class="hero-card">
         <h2>Start with DAV.</h2>
@@ -388,323 +218,118 @@
 
   <main class="wrap">
     <section id="start" class="section-card">
-      <div class="section-head">
-        <div>
-          <div class="chapter-label">Start Here</div>
-          <h2>How to Use This Guide in 5 Minutes</h2>
-        </div>
-      </div>
+      <div class="section-head"><div class="chapter-label">Start Here</div><h2>How to Use This Guide in 5 Minutes</h2></div>
       <div class="section-body">
+        <div class="coverage-note"><strong>Coverage note:</strong> This web version contains the main chapters, emergency guidance, directory, maps, official links, and checklists from the 165-page guide, but it is not the full manuscript word-for-word. The full long-form PDF should remain available for print delivery.</div>
         <div class="quick-guide">
           <div class="quick-item"><span class="num">1</span><div><strong>Need a VA disability claim?</strong><br>Go to Chapter 1 and contact DAV Chapter 246.</div></div>
           <div class="quick-item"><span class="num">2</span><div><strong>Need health care?</strong><br>Start with VA North Texas Health Care System or the Fort Worth VA Clinic.</div></div>
-          <div class="quick-item"><span class="num">3</span><div><strong>In crisis?</strong><br>Call 988, then press 1, text 838255, or call 911 for immediate danger.</div></div>
+          <div class="quick-item"><span class="num">3</span><div><strong>In crisis?</strong><br>Call 988, press 1, text 838255, or call 911 for immediate danger.</div></div>
           <div class="quick-item"><span class="num">4</span><div><strong>Facing homelessness?</strong><br>Contact VA Homeless Programs, HUD-VASH, SSVF, or 2-1-1 Texas right away.</div></div>
           <div class="quick-item"><span class="num">5</span><div><strong>Need food or utilities?</strong><br>Use Tarrant Area Food Bank, Mission Arlington, Salvation Army, Catholic Charities, or 2-1-1 Texas.</div></div>
-          <div class="quick-item"><span class="num">6</span><div><strong>Not sure where to begin?</strong><br>Call DAV Chapter 246 for guidance and referrals.</div></div>
+          <div class="quick-item"><span class="num">6</span><div><strong>Not sure where to begin?</strong><br>Use Ask Guide or call DAV Chapter 246 for guidance and referrals.</div></div>
         </div>
-
         <div class="toc" aria-label="Table of contents">
-          <a href="#claims">1. VA Claims</a>
-          <a href="#health">2. VA Health Care</a>
-          <a href="#mental-health">3. Mental Health</a>
-          <a href="#housing">4. Housing</a>
-          <a href="#employment">5. Employment</a>
-          <a href="#education">6. Education</a>
-          <a href="#financial">7. Financial Help</a>
-          <a href="#food">8. Food</a>
-          <a href="#transportation">9. Transportation</a>
-          <a href="#women">10. Women Veterans</a>
-          <a href="#caregivers">11. Caregivers</a>
-          <a href="#seniors">12. Senior Veterans</a>
-          <a href="#legal">13. Legal</a>
-          <a href="#texas-benefits">14. Texas Benefits</a>
-          <a href="#community">15. Community</a>
-          <a href="#directory">16. Directory</a>
+          <a href="#claims">1. VA Claims</a><a href="#health">2. VA Health Care</a><a href="#mental-health">3. Mental Health</a><a href="#housing">4. Housing</a><a href="#employment">5. Employment</a><a href="#education">6. Education</a><a href="#financial">7. Financial Help</a><a href="#food">8. Food</a><a href="#transportation">9. Transportation</a><a href="#women">10. Women Veterans</a><a href="#caregivers">11. Caregivers</a><a href="#seniors">12. Senior Veterans</a><a href="#legal">13. Legal</a><a href="#texas-benefits">14. Texas Benefits</a><a href="#community">15. Community</a><a href="#directory">16. Directory</a>
         </div>
       </div>
     </section>
 
     <section class="section-card">
-      <div class="section-head">
-        <div>
-          <div class="chapter-label">Welcome</div>
-          <h2>Veterans Helping Veterans</h2>
-        </div>
-      </div>
+      <div class="section-head"><div class="chapter-label">Welcome</div><h2>Veterans Helping Veterans</h2></div>
       <div class="section-body">
-        <div class="photo-row">
-          <div class="photo"><div class="photo-caption">Use the client-provided veteran group photo here: assets/veterans-community.jpg</div></div>
-          <div class="photo small"><div class="photo-caption">Use the DAV service officer or chapter photo here: assets/dav-service-officer.jpg</div></div>
+        <div class="split-feature">
+          <div class="photo community" role="img" aria-label="Veterans community visual"></div>
+          <div>
+            <p>Thank you for your service to our nation. This guide was created to help veterans, service members, families, caregivers, and survivors locate trusted benefits and services in Tarrant County, across Texas, and through the U.S. Department of Veterans Affairs.</p>
+            <p>Many veterans never receive benefits they may qualify for because they do not know where to begin, believe they are not eligible, or assume the process is too difficult. DAV Chapter 246 exists to help change that.</p>
+            <div class="note"><strong>DAV Chapter 246 can help with:</strong> VA disability compensation, PACT Act claims, toxic exposure claims, appeals, dependency benefits, survivor benefits, health care enrollment guidance, and referrals to trusted local resources.</div>
+          </div>
         </div>
-        <p>Thank you for your service to our nation. This guide was created to help veterans, service members, families, caregivers, and survivors locate trusted benefits and services in Tarrant County, across Texas, and through the U.S. Department of Veterans Affairs.</p>
-        <p>Many veterans never receive benefits they may qualify for because they do not know where to begin, believe they are not eligible, or assume the process is too difficult. DAV Chapter 246 exists to help change that.</p>
-        <div class="note"><strong>DAV Chapter 246 can help with:</strong> VA disability compensation, PACT Act claims, toxic exposure claims, appeals, dependency benefits, survivor benefits, health care enrollment guidance, and referrals to trusted local resources.</div>
       </div>
     </section>
 
     <section id="claims" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 1</div><h2>VA Disability Claims</h2></div></div>
+      <div class="section-head"><div class="chapter-label">Chapter 1</div><h2>VA Disability Claims</h2></div>
       <div class="section-body">
-        <p>VA disability compensation is a tax-free monthly benefit for veterans with illnesses, injuries, or conditions caused or made worse by military service. Ratings range from 0% to 100% and may affect access to other federal and Texas benefits.</p>
-        <div class="grid">
-          <div class="tile"><h3>Current Diagnosis</h3><p>Evidence that you currently have the condition, such as medical records from VA or private providers.</p></div>
-          <div class="tile"><h3>In-Service Event</h3><p>Evidence of an injury, illness, exposure, trauma, accident, deployment, or condition connected to service.</p></div>
-          <div class="tile"><h3>Medical Link</h3><p>A connection between the current condition and military service, sometimes called a nexus.</p></div>
-        </div>
+        <div class="photo-row"><div class="photo service" role="img" aria-label="DAV benefits assistance visual"></div><div class="tile"><h3>Free Claims Help</h3><p>VA disability compensation is a tax-free monthly benefit for veterans with illnesses, injuries, or conditions caused or made worse by military service. DAV Chapter 246 can help veterans understand claim options at no cost.</p></div></div>
+        <div class="grid"><div class="tile"><h3>Current Diagnosis</h3><p>Evidence that you currently have the condition, such as VA or private medical records.</p></div><div class="tile"><h3>In-Service Event</h3><p>Evidence of an injury, illness, exposure, trauma, accident, deployment, or condition connected to service.</p></div><div class="tile"><h3>Medical Link</h3><p>A connection between the current condition and military service, sometimes called a nexus.</p></div></div>
         <h3>Bring These Documents If Available</h3>
-        <ul>
-          <li>DD Form 214 or other separation documents</li>
-          <li>Government-issued photo ID and Social Security card</li>
-          <li>VA decision letters and VA correspondence</li>
-          <li>Service treatment records and private medical records</li>
-          <li>Medication list and provider contact information</li>
-          <li>Marriage certificate, divorce decree, and dependent birth certificates if applicable</li>
-          <li>Direct deposit information</li>
-        </ul>
+        <ul><li>DD Form 214 or other separation documents</li><li>Government-issued photo ID and Social Security card</li><li>VA decision letters and VA correspondence</li><li>Service treatment records and private medical records</li><li>Medication list and provider contact information</li><li>Marriage certificate, divorce decree, and dependent birth certificates if applicable</li><li>Direct deposit information</li></ul>
         <div class="tip"><strong>Veteran tip:</strong> Do not wait until every document is perfect. Contact DAV Chapter 246 early so an accredited representative can help identify what is needed.</div>
-        <h3>PACT Act and Toxic Exposure</h3>
-        <p>Veterans who served near burn pits, in Vietnam, in Southwest Asia, in Afghanistan, in Iraq, or in other qualifying locations may now qualify for benefits related to toxic exposure. Previously denied veterans should ask for a review because laws and presumptive conditions can change.</p>
-        <h3>C&amp;P Exams and Appeals</h3>
-        <p>A Compensation and Pension exam helps VA evaluate a claimed condition. Be honest, complete, and clear about good days and worst days. If a claim is denied, DAV can help review Supplemental Claim, Higher-Level Review, and Board Appeal options.</p>
+        <h3>PACT Act, C&amp;P Exams, and Appeals</h3>
+        <p>Veterans who served near burn pits, in Vietnam, in Southwest Asia, in Afghanistan, in Iraq, or in other qualifying locations may now qualify for toxic exposure benefits. A C&amp;P exam helps VA evaluate a claimed condition. If a claim is denied, DAV can help review Supplemental Claim, Higher-Level Review, and Board Appeal options.</p>
       </div>
     </section>
 
-    <section id="health" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 2</div><h2>VA Health Care</h2></div></div>
-      <div class="section-body">
-        <p>VA North Texas Health Care System serves veterans across North Texas with primary care, specialty care, mental health, pharmacy, telehealth, rehabilitation, women’s health, caregiver support, and emergency care.</p>
-        <div class="grid two">
-          <div class="tile"><h3>Fort Worth VA Clinic</h3><p>2201 SE Loop 820<br>Fort Worth, TX 76119</p><p>Common services include primary care, audiology, physical therapy, lab, pharmacy, mental health, telehealth, and specialty referrals.</p></div>
-          <div class="tile"><h3>VA North Texas Medical Center</h3><p>4500 S. Lancaster Road<br>Dallas, TX 75216</p><p>Major medical center for emergency care, specialty services, surgery, rehabilitation, and additional advanced care.</p></div>
-        </div>
-        <h3>Enrollment</h3>
-        <p>You may apply online through VA.gov, by phone, in person at a VA facility, or with help from an accredited DAV Service Officer. Bring your DD Form 214, photo ID, Social Security number, insurance information, and financial information if requested.</p>
-        <h3>Telehealth, Pharmacy, and Urgent Care</h3>
-        <p>Many appointments can be completed by phone, tablet, or computer. VA prescriptions may be refilled online or by phone and many maintenance medications are mailed. For life-threatening emergencies, call 911 or go to the nearest emergency room.</p>
-      </div>
-    </section>
+    <section id="health" class="section-card"><div class="section-head"><div class="chapter-label">Chapter 2</div><h2>VA Health Care</h2></div><div class="section-body"><p>VA North Texas Health Care System serves veterans across North Texas with primary care, specialty care, mental health, pharmacy, telehealth, rehabilitation, women’s health, caregiver support, and emergency care.</p><div class="grid two"><div class="tile"><h3>Fort Worth VA Clinic</h3><p>2201 SE Loop 820<br>Fort Worth, TX 76119</p><p>Primary care, audiology, physical therapy, lab, pharmacy, mental health, telehealth, and specialty referrals.</p></div><div class="tile"><h3>VA North Texas Medical Center</h3><p>4500 S. Lancaster Road<br>Dallas, TX 75216</p><p>Major medical center for emergency care, specialty services, surgery, rehabilitation, and advanced care.</p></div></div><h3>Enrollment</h3><p>You may apply online through VA.gov, by phone, in person at a VA facility, or with help from an accredited DAV Service Officer. Bring your DD Form 214, photo ID, Social Security number, insurance information, and financial information if requested.</p></div></section>
 
-    <section id="mental-health" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 3</div><h2>Mental Health & Emotional Wellness</h2></div></div>
-      <div class="section-body">
-        <div class="urgent"><strong>If you are in crisis:</strong> Call 988, then press 1, text 838255, chat through the Veterans Crisis Line, or call 911 if there is immediate danger.</div>
-        <p>Veterans may experience PTSD, depression, anxiety, grief, Military Sexual Trauma, substance use, sleep disorders, anger, relationship stress, or transition challenges. These conditions are common and treatable.</p>
-        <div class="grid two">
-          <div class="tile"><h3>Fort Worth Vet Center</h3><p>Provides community-based counseling, PTSD treatment, MST counseling, bereavement counseling, family counseling, readjustment counseling, and referrals.</p></div>
-          <div class="tile"><h3>Military Veteran Peer Network</h3><p>Connects veterans with trained peer volunteers for support, mentoring, recovery, resource navigation, and community connection.</p></div>
-        </div>
-      </div>
-    </section>
+    <section id="mental-health" class="section-card"><div class="section-head"><div class="chapter-label">Chapter 3</div><h2>Mental Health & Emotional Wellness</h2></div><div class="section-body"><div class="urgent"><strong>If you are in crisis:</strong> Call 988, then press 1, text 838255, chat through the Veterans Crisis Line, or call 911 if there is immediate danger.</div><p>Veterans may experience PTSD, depression, anxiety, grief, Military Sexual Trauma, substance use, sleep disorders, anger, relationship stress, or transition challenges. These conditions are common and treatable.</p><div class="grid two"><div class="tile"><h3>Fort Worth Vet Center</h3><p>Community-based counseling, PTSD treatment, MST counseling, bereavement counseling, family counseling, readjustment counseling, and referrals.</p></div><div class="tile"><h3>Military Veteran Peer Network</h3><p>Peer support, mentoring, recovery, resource navigation, and community connection.</p></div></div></div></section>
 
-    <section id="housing" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 4</div><h2>Housing, Homelessness & Emergency Assistance</h2></div></div>
-      <div class="section-body">
-        <p>Seek help immediately if you have an eviction notice, are sleeping outside or in a vehicle, are staying in a shelter, are moving from place to place, or cannot pay rent or utilities.</p>
-        <div class="grid">
-          <div class="tile"><h3>HUD-VASH</h3><p>Combines rental assistance with VA case management for eligible veterans experiencing homelessness.</p></div>
-          <div class="tile"><h3>SSVF</h3><p>Supportive Services for Veteran Families may help with rent, deposits, utilities, moving expenses, and case management.</p></div>
-          <div class="tile"><h3>Emergency Shelter</h3><p>Presbyterian Night Shelter, Catholic Charities Fort Worth, Volunteers of America Texas, Patriot House, and 2-1-1 Texas can help identify local options.</p></div>
-        </div>
-        <div class="tip"><strong>Veteran tip:</strong> Housing programs often have waiting lists. Ask for help before the crisis becomes immediate.</div>
-      </div>
-    </section>
+    <section id="housing" class="section-card"><div class="section-head"><div class="chapter-label">Chapter 4</div><h2>Housing, Homelessness & Emergency Assistance</h2></div><div class="section-body"><p>Seek help immediately if you have an eviction notice, are sleeping outside or in a vehicle, are staying in a shelter, are moving from place to place, or cannot pay rent or utilities.</p><div class="grid"><div class="tile"><h3>HUD-VASH</h3><p>Rental assistance with VA case management for eligible veterans experiencing homelessness.</p></div><div class="tile"><h3>SSVF</h3><p>Supportive Services for Veteran Families may help with rent, deposits, utilities, moving expenses, and case management.</p></div><div class="tile"><h3>Emergency Shelter</h3><p>Presbyterian Night Shelter, Catholic Charities Fort Worth, Volunteers of America Texas, Patriot House, and 2-1-1 Texas can help identify options.</p></div></div><div class="tip"><strong>Veteran tip:</strong> Housing programs often have waiting lists. Ask for help before the crisis becomes immediate.</div></div></section>
 
-    <section id="employment" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 5</div><h2>Employment, Careers & Small Business</h2></div></div>
-      <div class="section-body">
-        <p>Veterans bring leadership, discipline, teamwork, technical training, and problem-solving skills to the civilian workforce.</p>
-        <div class="grid">
-          <div class="tile"><h3>Texas Veterans Commission</h3><p>Career planning, resume help, interview preparation, job search support, employer connections, and veteran priority services.</p></div>
-          <div class="tile"><h3>Workforce Solutions</h3><p>Job placement, training, hiring events, apprenticeships, labor market information, and workforce certifications.</p></div>
-          <div class="tile"><h3>Entrepreneurship</h3><p>Veterans Business Outreach Centers can help with business planning, financing options, training, and government contracting basics.</p></div>
-        </div>
-      </div>
-    </section>
+    <section id="employment" class="section-card"><div class="section-head"><div class="chapter-label">Chapter 5</div><h2>Employment, Careers & Small Business</h2></div><div class="section-body"><p>Veterans bring leadership, discipline, teamwork, technical training, and problem-solving skills to the civilian workforce.</p><div class="grid"><div class="tile"><h3>Texas Veterans Commission</h3><p>Career planning, resume help, interview preparation, job search support, employer connections, and veteran priority services.</p></div><div class="tile"><h3>Workforce Solutions</h3><p>Job placement, training, hiring events, apprenticeships, labor market information, and workforce certifications.</p></div><div class="tile"><h3>Entrepreneurship</h3><p>Veterans Business Outreach Centers can help with business planning, financing options, training, and government contracting basics.</p></div></div></div></section>
 
-    <section id="education" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 6</div><h2>Education, Training & Lifelong Learning</h2></div></div>
-      <div class="section-body">
-        <p>Education benefits can help veterans pursue college, technical training, trade school, apprenticeships, certifications, licensing exams, and career changes.</p>
-        <div class="grid">
-          <div class="tile"><h3>GI Bill</h3><p>May help with tuition, housing allowance, book stipend, apprenticeships, licensing exams, and approved training programs.</p></div>
-          <div class="tile"><h3>Hazlewood Act</h3><p>Eligible Texas veterans may receive up to 150 credit hours of tuition exemption at Texas public colleges and universities.</p></div>
-          <div class="tile"><h3>VR&amp;E</h3><p>Veteran Readiness and Employment helps eligible veterans with service-connected disabilities prepare for and maintain suitable employment.</p></div>
-        </div>
-        <p>Local options include Tarrant County College, University of Texas at Arlington, Texas Wesleyan University, Texas Christian University, and approved trade or certification programs.</p>
-      </div>
-    </section>
+    <section id="education" class="section-card"><div class="section-head"><div class="chapter-label">Chapter 6</div><h2>Education, Training & Lifelong Learning</h2></div><div class="section-body"><p>Education benefits can help veterans pursue college, technical training, trade school, apprenticeships, certifications, licensing exams, and career changes.</p><div class="grid"><div class="tile"><h3>GI Bill</h3><p>May help with tuition, housing allowance, book stipend, apprenticeships, licensing exams, and approved training programs.</p></div><div class="tile"><h3>Hazlewood Act</h3><p>Eligible Texas veterans may receive up to 150 credit hours of tuition exemption at Texas public colleges and universities.</p></div><div class="tile"><h3>VR&amp;E</h3><p>Veteran Readiness and Employment helps eligible veterans with service-connected disabilities prepare for and maintain suitable employment.</p></div></div><p>Local options include Tarrant County College, University of Texas at Arlington, Texas Wesleyan University, Texas Christian University, and approved trade or certification programs.</p></div></section>
 
-    <section id="financial" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 7</div><h2>Financial Assistance & Emergency Support</h2></div></div>
-      <div class="section-body">
-        <p>Emergency assistance may help with rent, utilities, food, transportation, temporary lodging, clothing, medical expenses, case management, and financial counseling when funding is available.</p>
-        <div class="note"><strong>Scam warning:</strong> Be cautious of anyone who guarantees VA benefits, asks for payment to file a claim, requests your VA.gov credentials, or pressures you to sign immediately.</div>
-      </div>
-    </section>
+    <section id="financial" class="section-card"><div class="section-head"><div class="chapter-label">Chapter 7</div><h2>Financial Assistance & Emergency Support</h2></div><div class="section-body"><p>Emergency assistance may help with rent, utilities, food, transportation, temporary lodging, clothing, medical expenses, case management, and financial counseling when funding is available.</p><div class="note"><strong>Scam warning:</strong> Be cautious of anyone who guarantees VA benefits, asks for payment to file a claim, requests your VA.gov credentials, or pressures you to sign immediately.</div></div></section>
 
-    <section id="food" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 8</div><h2>Food Assistance & Nutrition</h2></div></div>
-      <div class="section-body">
-        <p>No veteran should have to choose between food, rent, utilities, or medication. Food support in Tarrant County may include emergency groceries, fresh produce, mobile distributions, SNAP application help, home-delivered meals, holiday meals, and household essentials.</p>
-        <div class="grid">
-          <div class="tile"><h3>Tarrant Area Food Bank</h3><p>Emergency food, mobile distributions, SNAP help, and pantry network.</p></div>
-          <div class="tile"><h3>Mission Arlington</h3><p>Groceries, clothing, household help, school supplies, and community support.</p></div>
-          <div class="tile"><h3>Meals on Wheels</h3><p>Home-delivered meals and wellness checks for eligible seniors and people with disabilities.</p></div>
-        </div>
-      </div>
-    </section>
+    <section id="food" class="section-card"><div class="section-head"><div class="chapter-label">Chapter 8</div><h2>Food Assistance & Nutrition</h2></div><div class="section-body"><p>No veteran should have to choose between food, rent, utilities, or medication. Food support in Tarrant County may include emergency groceries, fresh produce, mobile distributions, SNAP application help, home-delivered meals, holiday meals, and household essentials.</p><div class="grid"><div class="tile"><h3>Tarrant Area Food Bank</h3><p>Emergency food, mobile distributions, SNAP help, and pantry network.</p></div><div class="tile"><h3>Mission Arlington</h3><p>Groceries, clothing, household help, school supplies, and community support.</p></div><div class="tile"><h3>Meals on Wheels</h3><p>Home-delivered meals and wellness checks for eligible seniors and people with disabilities.</p></div></div></div></section>
 
-    <section id="transportation" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 9</div><h2>Transportation Services</h2></div></div>
-      <div class="section-body">
-        <p>Reliable transportation helps veterans attend medical appointments, benefits appointments, job interviews, training, and essential services.</p>
-        <div class="grid">
-          <div class="tile"><h3>DAV Transportation Network</h3><p>Volunteer transportation to scheduled VA medical appointments when available.</p></div>
-          <div class="tile"><h3>VA Beneficiary Travel</h3><p>Eligible veterans may qualify for mileage reimbursement or approved medical transportation.</p></div>
-          <div class="tile"><h3>Trinity Metro</h3><p>Bus service, TEXRail, Trinity Railway Express connections, ZIPZONE, and mobility services.</p></div>
-        </div>
-      </div>
-    </section>
+    <section id="transportation" class="section-card"><div class="section-head"><div class="chapter-label">Chapter 9</div><h2>Transportation Services</h2></div><div class="section-body"><p>Reliable transportation helps veterans attend medical appointments, benefits appointments, job interviews, training, and essential services.</p><div class="grid"><div class="tile"><h3>DAV Transportation Network</h3><p>Volunteer transportation to scheduled VA medical appointments when available.</p></div><div class="tile"><h3>VA Beneficiary Travel</h3><p>Eligible veterans may qualify for mileage reimbursement or approved medical transportation.</p></div><div class="tile"><h3>Trinity Metro</h3><p>Bus service, TEXRail, Trinity Railway Express connections, ZIPZONE, and mobility services.</p></div></div></div></section>
 
-    <section id="women" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 10</div><h2>Women Veterans</h2></div></div>
-      <div class="section-body">
-        <p>Women veterans are entitled to the same VA benefits as other eligible veterans and may also access women-specific care through VA North Texas.</p>
-        <ul>
-          <li>Women’s primary care, annual wellness exams, gynecology, mammograms, and cervical cancer screening</li>
-          <li>Maternity care coordination and postpartum support</li>
-          <li>Mental health care, MST care, family planning, menopause care, nutrition, and telehealth</li>
-          <li>Women Veterans Program Manager support for care coordination and referrals</li>
-        </ul>
-      </div>
-    </section>
+    <section id="women" class="section-card"><div class="section-head"><div class="chapter-label">Chapter 10</div><h2>Women Veterans</h2></div><div class="section-body"><p>Women veterans are entitled to the same VA benefits as other eligible veterans and may also access women-specific care through VA North Texas.</p><ul><li>Women’s primary care, annual wellness exams, gynecology, mammograms, and cervical cancer screening</li><li>Maternity care coordination and postpartum support</li><li>Mental health care, MST care, family planning, menopause care, nutrition, and telehealth</li><li>Women Veterans Program Manager support for care coordination and referrals</li></ul></div></section>
 
-    <section id="caregivers" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 11</div><h2>Family, Caregivers & Survivor Support</h2></div></div>
-      <div class="section-body">
-        <p>Spouses, children, parents, caregivers, and survivors may qualify for programs that support caregiving, survivor benefits, education, burial benefits, respite care, and counseling.</p>
-        <div class="grid two">
-          <div class="tile"><h3>Caregiver Support</h3><p>Education, skills training, peer support, coaching, respite care, and resource referrals.</p></div>
-          <div class="tile"><h3>Survivor Benefits</h3><p>Possible benefits include DIC, survivor pension, burial benefits, education benefits, home loan assistance, and memorial benefits.</p></div>
-        </div>
-      </div>
-    </section>
+    <section id="caregivers" class="section-card"><div class="section-head"><div class="chapter-label">Chapter 11</div><h2>Family, Caregivers & Survivor Support</h2></div><div class="section-body"><p>Spouses, children, parents, caregivers, and survivors may qualify for programs that support caregiving, survivor benefits, education, burial benefits, respite care, and counseling.</p><div class="grid two"><div class="tile"><h3>Caregiver Support</h3><p>Education, skills training, peer support, coaching, respite care, and resource referrals.</p></div><div class="tile"><h3>Survivor Benefits</h3><p>Possible benefits include DIC, survivor pension, burial benefits, education benefits, home loan assistance, and memorial benefits.</p></div></div></div></section>
 
-    <section id="seniors" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 12</div><h2>Senior Veterans & Long-Term Care</h2></div></div>
-      <div class="section-body">
-        <p>As veterans age, needs may include geriatric care, home-based primary care, homemaker and home health aide services, adult day health care, community living centers, hospice, palliative care, and state veterans homes.</p>
-        <div class="tip"><strong>Veteran tip:</strong> Learn about long-term care before a medical emergency. Planning early gives families more options.</div>
-      </div>
-    </section>
+    <section id="seniors" class="section-card"><div class="section-head"><div class="chapter-label">Chapter 12</div><h2>Senior Veterans & Long-Term Care</h2></div><div class="section-body"><p>As veterans age, needs may include geriatric care, home-based primary care, homemaker and home health aide services, adult day health care, community living centers, hospice, palliative care, and state veterans homes.</p><div class="tip"><strong>Veteran tip:</strong> Learn about long-term care before a medical emergency. Planning early gives families more options.</div></div></section>
 
-    <section id="legal" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 13</div><h2>Legal Services & Veterans Rights</h2></div></div>
-      <div class="section-body">
-        <p>Legal issues may involve housing, employment, consumer protection, family law, public benefits, estate planning, and veterans treatment courts. Seek help as soon as legal paperwork arrives.</p>
-        <div class="grid two">
-          <div class="tile"><h3>Texas Lawyers for Texas Veterans</h3><p>Free civil legal clinics for eligible veterans when available.</p></div>
-          <div class="tile"><h3>Legal Aid of NorthWest Texas</h3><p>Free civil legal assistance for eligible low-income residents, including many veterans.</p></div>
-        </div>
-      </div>
-    </section>
+    <section id="legal" class="section-card"><div class="section-head"><div class="chapter-label">Chapter 13</div><h2>Legal Services & Veterans Rights</h2></div><div class="section-body"><p>Legal issues may involve housing, employment, consumer protection, family law, public benefits, estate planning, and veterans treatment courts. Seek help as soon as legal paperwork arrives.</p><div class="grid two"><div class="tile"><h3>Texas Lawyers for Texas Veterans</h3><p>Free civil legal clinics for eligible veterans when available.</p></div><div class="tile"><h3>Legal Aid of NorthWest Texas</h3><p>Free civil legal assistance for eligible low-income residents, including many veterans.</p></div></div></div></section>
 
-    <section id="texas-benefits" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 14</div><h2>Texas Veterans Benefits</h2></div></div>
-      <div class="section-body">
-        <p>Texas offers additional benefits involving education, property tax exemptions, license plates, home loans, land loans, state veterans homes, cemeteries, hunting and fishing licenses, parks, employment, and veteran outreach.</p>
-        <ul>
-          <li>Texas Veterans Commission for benefits, employment, education, claims, and outreach</li>
-          <li>Texas Veterans Land Board for home loans, land loans, home improvement loans, state veterans homes, and cemeteries</li>
-          <li>Texas Hazlewood Act for eligible public college tuition exemption</li>
-          <li>County appraisal district for property tax exemption applications</li>
-        </ul>
-      </div>
-    </section>
+    <section id="texas-benefits" class="section-card"><div class="section-head"><div class="chapter-label">Chapter 14</div><h2>Texas Veterans Benefits</h2></div><div class="section-body"><p>Texas offers additional benefits involving education, property tax exemptions, license plates, home loans, land loans, state veterans homes, cemeteries, hunting and fishing licenses, parks, employment, and veteran outreach.</p><ul><li>Texas Veterans Commission for benefits, employment, education, claims, and outreach</li><li>Texas Veterans Land Board for home loans, land loans, home improvement loans, state veterans homes, and cemeteries</li><li>Texas Hazlewood Act for eligible public college tuition exemption</li><li>County appraisal district for property tax exemption applications</li></ul></div></section>
 
-    <section id="community" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 15</div><h2>Community Organizations & Support Networks</h2></div></div>
-      <div class="section-body">
-        <p>Veteran organizations provide fellowship, advocacy, community service, mentorship, volunteer opportunities, physical activity, disaster response, and family support.</p>
-        <div class="grid">
-          <div class="tile"><h3>DAV</h3><p>Claims assistance, benefits counseling, transportation, advocacy, and outreach.</p></div>
-          <div class="tile"><h3>American Legion & VFW</h3><p>Advocacy, scholarships, community events, fellowship, and service opportunities.</p></div>
-          <div class="tile"><h3>Team Rubicon & Team RWB</h3><p>Disaster response, fitness, community connection, leadership, and volunteer service.</p></div>
-        </div>
-      </div>
-    </section>
+    <section id="community" class="section-card"><div class="section-head"><div class="chapter-label">Chapter 15</div><h2>Community Organizations & Support Networks</h2></div><div class="section-body"><p>Veteran organizations provide fellowship, advocacy, community service, mentorship, volunteer opportunities, physical activity, disaster response, and family support.</p><div class="grid"><div class="tile"><h3>DAV</h3><p>Claims assistance, benefits counseling, transportation, advocacy, and outreach.</p></div><div class="tile"><h3>American Legion & VFW</h3><p>Advocacy, scholarships, community events, fellowship, and service opportunities.</p></div><div class="tile"><h3>Team Rubicon & Team RWB</h3><p>Disaster response, fitness, community connection, leadership, and volunteer service.</p></div></div></div></section>
 
-    <section id="directory" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Chapter 16</div><h2>Tarrant County Veterans Resource Directory</h2></div></div>
-      <div class="section-body">
-        <div class="directory">
-          <div class="resource"><h3>Emergency</h3><p><strong>911</strong> for immediate danger.<br><strong>Veterans Crisis Line:</strong> 988, press 1. Text 838255.</p></div>
-          <div class="resource"><h3>DAV Chapter 246</h3><p>Free accredited claims assistance, appeals, PACT Act claims, dependency claims, survivor benefits, and referrals.<br><strong>Phone:</strong> <a href="tel:2148310298">214-831-0298</a></p></div>
-          <div class="resource"><h3>VA North Texas Health Care System</h3><p>Primary care, specialty care, emergency care, pharmacy, mental health, women’s health, rehabilitation, telehealth, and caregiver support.</p></div>
-          <div class="resource"><h3>Fort Worth VA Clinic</h3><p>2201 SE Loop 820, Fort Worth, TX 76119. Primary care, pharmacy, lab, mental health, audiology, physical therapy, and referrals.</p></div>
-          <div class="resource"><h3>Fort Worth Vet Center</h3><p>PTSD counseling, MST counseling, bereavement counseling, family counseling, readjustment counseling, and community referrals.</p></div>
-          <div class="resource"><h3>Tarrant County Veteran Service Office</h3><p>County veteran benefits, burial benefits, benefit applications, and veteran resource referrals. Appointments are recommended.</p></div>
-          <div class="resource"><h3>Housing</h3><p>HUD-VASH, SSVF, Catholic Charities Fort Worth, Presbyterian Night Shelter, Volunteers of America Texas, Patriot House, and 2-1-1 Texas.</p></div>
-          <div class="resource"><h3>Food</h3><p>Tarrant Area Food Bank, Mission Arlington, Salvation Army, Meals on Wheels, community food pantries, and SNAP through Texas HHSC.</p></div>
-          <div class="resource"><h3>Employment</h3><p>Texas Veterans Commission, Workforce Solutions for Tarrant County, Hire Heroes USA, and Veterans Business Outreach Centers.</p></div>
-          <div class="resource"><h3>Legal</h3><p>Texas Lawyers for Texas Veterans, Legal Aid of NorthWest Texas, and Veterans Treatment Courts.</p></div>
-        </div>
-      </div>
-    </section>
+    <section id="directory" class="section-card"><div class="section-head"><div class="chapter-label">Chapter 16</div><h2>Tarrant County Veterans Resource Directory</h2></div><div class="section-body"><div class="directory"><div class="resource"><h3>Emergency</h3><p><strong>911</strong> for immediate danger.<br><strong>Veterans Crisis Line:</strong> 988, press 1. Text 838255.</p></div><div class="resource"><h3>DAV Chapter 246</h3><p>Free accredited claims assistance, appeals, PACT Act claims, dependency claims, survivor benefits, and referrals.<br><strong>Phone:</strong> <a href="tel:2148310298">214-831-0298</a></p></div><div class="resource"><h3>VA North Texas Health Care System</h3><p>Primary care, specialty care, emergency care, pharmacy, mental health, women’s health, rehabilitation, telehealth, and caregiver support.</p></div><div class="resource"><h3>Fort Worth VA Clinic</h3><p>2201 SE Loop 820, Fort Worth, TX 76119. Primary care, pharmacy, lab, mental health, audiology, physical therapy, and referrals.</p></div><div class="resource"><h3>Fort Worth Vet Center</h3><p>PTSD counseling, MST counseling, bereavement counseling, family counseling, readjustment counseling, and community referrals.</p></div><div class="resource"><h3>Tarrant County Veteran Service Office</h3><p>County veteran benefits, burial benefits, benefit applications, and veteran resource referrals. Appointments are recommended.</p></div><div class="resource"><h3>Housing</h3><p>HUD-VASH, SSVF, Catholic Charities Fort Worth, Presbyterian Night Shelter, Volunteers of America Texas, Patriot House, and 2-1-1 Texas.</p></div><div class="resource"><h3>Food</h3><p>Tarrant Area Food Bank, Mission Arlington, Salvation Army, Meals on Wheels, community food pantries, and SNAP through Texas HHSC.</p></div><div class="resource"><h3>Employment</h3><p>Texas Veterans Commission, Workforce Solutions for Tarrant County, Hire Heroes USA, and Veterans Business Outreach Centers.</p></div><div class="resource"><h3>Legal</h3><p>Texas Lawyers for Texas Veterans, Legal Aid of NorthWest Texas, and Veterans Treatment Courts.</p></div></div></div></section>
 
-    <section id="maps" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Appendix</div><h2>Maps & GPS Links</h2></div></div>
-      <div class="section-body">
-        <p>This section replaces the unfinished map placeholder with direct navigation links veterans can use from a phone.</p>
-        <div class="map-list">
-          <a class="resource" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=VA+North+Texas+Health+Care+System+4500+S+Lancaster+Rd+Dallas+TX+75216"><h3>VA North Texas Medical Center</h3><p>Open GPS directions</p></a>
-          <a class="resource" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=Fort+Worth+VA+Clinic+2201+SE+Loop+820+Fort+Worth+TX+76119"><h3>Fort Worth VA Clinic</h3><p>Open GPS directions</p></a>
-          <a class="resource" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=Fort+Worth+Vet+Center"><h3>Fort Worth Vet Center</h3><p>Open GPS directions</p></a>
-          <a class="resource" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=Tarrant+County+Veteran+Service+Office"><h3>Tarrant County Veteran Service Office</h3><p>Open GPS directions</p></a>
-        </div>
-      </div>
-    </section>
+    <section id="maps" class="section-card"><div class="section-head"><div class="chapter-label">Appendix</div><h2>Maps & GPS Links</h2></div><div class="section-body"><p>These links are not QR codes. They are direct map searches that can be opened from a phone or desktop.</p><div class="map-list"><a class="resource" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=VA+North+Texas+Health+Care+System+4500+S+Lancaster+Rd+Dallas+TX+75216"><h3>VA North Texas Medical Center</h3><p>Open GPS directions</p></a><a class="resource" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=Fort+Worth+VA+Clinic+2201+SE+Loop+820+Fort+Worth+TX+76119"><h3>Fort Worth VA Clinic</h3><p>Open GPS directions</p></a><a class="resource" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=Fort+Worth+Vet+Center"><h3>Fort Worth Vet Center</h3><p>Open GPS directions</p></a><a class="resource" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=Tarrant+County+Veteran+Service+Office"><h3>Tarrant County Veteran Service Office</h3><p>Open GPS directions</p></a></div></div></section>
 
-    <section id="qr" class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Appendix</div><h2>QR Code Directory</h2></div></div>
-      <div class="section-body">
-        <p>This finished QR directory replaces the draft QR placeholder. Each code points to an official or practical resource veterans can scan.</p>
-        <div class="qr-grid">
-          <div class="qr-card"><img alt="QR code for VA.gov" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fwww.va.gov" /><h3>VA.gov</h3></div>
-          <div class="qr-card"><img alt="QR code for VA disability benefits" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fwww.va.gov%2Fdisability%2F" /><h3>VA Disability</h3></div>
-          <div class="qr-card"><img alt="QR code for VA health care" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fwww.va.gov%2Fhealth-care%2F" /><h3>VA Health Care</h3></div>
-          <div class="qr-card"><img alt="QR code for Veterans Crisis Line" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fwww.veteranscrisisline.net" /><h3>Crisis Line</h3></div>
-          <div class="qr-card"><img alt="QR code for Texas Veterans Commission" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fwww.tvc.texas.gov" /><h3>TVC</h3></div>
-          <div class="qr-card"><img alt="QR code for Texas Veterans Land Board" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fvlb.texas.gov" /><h3>VLB</h3></div>
-          <div class="qr-card"><img alt="QR code for 211 Texas" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fwww.211texas.org" /><h3>2-1-1 Texas</h3></div>
-          <div class="qr-card"><img alt="QR code for Tarrant Area Food Bank" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Ftafb.org" /><h3>Food Bank</h3></div>
-        </div>
-      </div>
-    </section>
+    <section id="official-links" class="section-card"><div class="section-head"><div class="chapter-label">Appendix</div><h2>Official Resource Links</h2></div><div class="section-body"><p>The earlier QR code images were removed so nothing looks questionable or auto-generated. These are plain official links that can later be converted into final QR codes after the client confirms the exact destinations.</p><div class="official-links"><a class="official-link" href="https://www.va.gov" target="_blank" rel="noreferrer">VA.gov<span>Main Department of Veterans Affairs site</span></a><a class="official-link" href="https://www.va.gov/disability/" target="_blank" rel="noreferrer">VA Disability Benefits<span>Claims and compensation information</span></a><a class="official-link" href="https://www.va.gov/health-care/" target="_blank" rel="noreferrer">VA Health Care<span>Enrollment and health care information</span></a><a class="official-link" href="https://www.veteranscrisisline.net" target="_blank" rel="noreferrer">Veterans Crisis Line<span>Call, text, or chat support</span></a><a class="official-link" href="https://www.tvc.texas.gov" target="_blank" rel="noreferrer">Texas Veterans Commission<span>Texas benefits, claims, employment, and education</span></a><a class="official-link" href="https://vlb.texas.gov" target="_blank" rel="noreferrer">Texas Veterans Land Board<span>Land, home, cemetery, and state veterans home programs</span></a><a class="official-link" href="https://www.211texas.org" target="_blank" rel="noreferrer">2-1-1 Texas<span>Housing, food, utility, and community assistance</span></a><a class="official-link" href="https://tafb.org" target="_blank" rel="noreferrer">Tarrant Area Food Bank<span>Food assistance and pantry resources</span></a></div></div></section>
 
-    <section class="section-card">
-      <div class="section-head"><div><div class="chapter-label">Appendix</div><h2>Veteran Preparedness Checklist</h2></div></div>
-      <div class="section-body">
-        <div class="grid two">
-          <div class="tile"><h3>Personal & Military</h3><ul><li>Driver license or state ID</li><li>Social Security card</li><li>DD Form 214</li><li>Deployment records</li><li>Service treatment records</li></ul></div>
-          <div class="tile"><h3>VA & Medical</h3><ul><li>VA decision letters</li><li>VA award letters</li><li>Veteran Health Identification Card</li><li>Medication list</li><li>Primary care and specialist contacts</li></ul></div>
-          <div class="tile"><h3>Family & Financial</h3><ul><li>Marriage certificate</li><li>Birth certificates</li><li>Banking information</li><li>Life insurance policies</li><li>Tax records</li></ul></div>
-          <div class="tile"><h3>Legal</h3><ul><li>Will</li><li>Medical Power of Attorney</li><li>Durable Power of Attorney</li><li>Advance Directive</li><li>Emergency contact list</li></ul></div>
-        </div>
-      </div>
-    </section>
+    <section class="section-card"><div class="section-head"><div class="chapter-label">Appendix</div><h2>Veteran Preparedness Checklist</h2></div><div class="section-body"><div class="grid two"><div class="tile"><h3>Personal & Military</h3><ul><li>Driver license or state ID</li><li>Social Security card</li><li>DD Form 214</li><li>Deployment records</li><li>Service treatment records</li></ul></div><div class="tile"><h3>VA & Medical</h3><ul><li>VA decision letters</li><li>VA award letters</li><li>Veteran Health Identification Card</li><li>Medication list</li><li>Primary care and specialist contacts</li></ul></div><div class="tile"><h3>Family & Financial</h3><ul><li>Marriage certificate</li><li>Birth certificates</li><li>Banking information</li><li>Life insurance policies</li><li>Tax records</li></ul></div><div class="tile"><h3>Legal</h3><ul><li>Will</li><li>Medical Power of Attorney</li><li>Durable Power of Attorney</li><li>Advance Directive</li><li>Emergency contact list</li></ul></div></div></div></section>
   </main>
 
-  <footer class="footer">
-    <div class="wrap">
-      <h2>Our Promise to Veterans</h2>
-      <p>You served our nation with honor. DAV Chapter 246 is committed to helping veterans, caregivers, families, and survivors access the benefits and resources earned through military service.</p>
-      <p><strong>DAV Chapter 246:</strong> <a href="tel:2148310298">214-831-0298</a></p>
-      <div class="disclaimer">
-        <p>Published by Disabled American Veterans Chapter 246, Mansfield, Texas. This guide is for educational and informational purposes only and is not legal, medical, financial, or tax advice. Programs, eligibility rules, phone numbers, addresses, office hours, and funding can change. Veterans should verify information directly with the appropriate agency before applying or making decisions. Last updated July 6, 2026.</p>
-      </div>
-    </div>
-  </footer>
+  <footer><div class="wrap"><h2>Our Promise to Veterans</h2><p>You served our nation with honor. DAV Chapter 246 is committed to helping veterans, caregivers, families, and survivors access the benefits and resources earned through military service.</p><p><strong>DAV Chapter 246:</strong> <a href="tel:2148310298">214-831-0298</a></p><div class="disclaimer"><p>Published by Disabled American Veterans Chapter 246, Mansfield, Texas. This guide is for educational and informational purposes only and is not legal, medical, financial, or tax advice. Programs, eligibility rules, phone numbers, addresses, office hours, and funding can change. Veterans should verify information directly with the appropriate agency before applying or making decisions. Last updated July 6, 2026.</p></div></div></footer>
+
+  <script>
+    const guideIndex = [
+      {title:'VA Disability Claims', url:'#claims', text:'claims disability compensation PACT Act toxic exposure appeals C&P supplemental higher level review benefits DAV'},
+      {title:'VA Health Care', url:'#health', text:'health care clinic Fort Worth VA North Texas pharmacy telehealth primary care emergency urgent care'},
+      {title:'Mental Health Crisis', url:'#mental-health', text:'crisis 988 press 1 PTSD depression anxiety MST suicide prevention Vet Center peer support'},
+      {title:'Housing and Homelessness', url:'#housing', text:'housing homelessness rent utility eviction HUD VASH SSVF shelter Catholic Charities Presbyterian Night Shelter'},
+      {title:'Employment and Careers', url:'#employment', text:'employment jobs career resume interview workforce Texas Veterans Commission small business'},
+      {title:'Education and Training', url:'#education', text:'education GI Bill Hazlewood VR&E college training certification TCC UTA'},
+      {title:'Financial Assistance', url:'#financial', text:'financial assistance rent utilities emergency food scams identity theft'},
+      {title:'Food Assistance', url:'#food', text:'food pantry groceries SNAP Tarrant Area Food Bank Mission Arlington Meals on Wheels'},
+      {title:'Transportation', url:'#transportation', text:'transportation DAV rides beneficiary travel Trinity Metro medical appointments'},
+      {title:'Women Veterans', url:'#women', text:'women veterans maternity MST wellness gynecology mental health women veterans program manager'},
+      {title:'Caregivers and Survivors', url:'#caregivers', text:'caregiver family survivor DIC burial respite support spouse dependents'},
+      {title:'Senior Veterans', url:'#seniors', text:'senior veterans long term care Aid and Attendance home based primary care hospice palliative'},
+      {title:'Legal Help', url:'#legal', text:'legal lawyers legal aid veterans treatment court estate planning housing employment rights'},
+      {title:'Texas Veterans Benefits', url:'#texas-benefits', text:'Texas benefits property tax Hazlewood land board license plates parks cemetery'},
+      {title:'Resource Directory', url:'#directory', text:'directory phone numbers resources emergency DAV VA clinic county service office'}
+    ];
+    function toggleAsk(open) {
+      const panel = document.getElementById('askPanel');
+      panel.classList.toggle('open', open);
+      if (open) { document.getElementById('askInput').focus(); runGuideSearch(document.getElementById('askInput').value); }
+    }
+    function runGuideSearch(value) {
+      const q = value.trim().toLowerCase();
+      const results = document.getElementById('askResults');
+      const matches = q ? guideIndex.filter(item => (item.title + ' ' + item.text).toLowerCase().includes(q)) : guideIndex.slice(0, 6);
+      results.innerHTML = matches.length ? matches.map(item => `<a class="ask-result" href="${item.url}" onclick="toggleAsk(false)"><strong>${item.title}</strong><small>${item.text.slice(0, 92)}...</small></a>`).join('') : '<div class="ask-result"><strong>No exact match</strong><small>Try claims, housing, crisis, food, legal, education, or transportation.</small></div>';
+    }
+  </script>
 </body>
 </html>
