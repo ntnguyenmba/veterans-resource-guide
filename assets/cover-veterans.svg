@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Veterans resource guide cover visual">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#314d73"/><stop offset=".55" stop-color="#172b4d"/><stop offset="1" stop-color="#0f1d33"/></linearGradient>
+    <linearGradient id="warm" x1="0" x2="1"><stop offset="0" stop-color="#f5efe5"/><stop offset="1" stop-color="#c8ad8e"/></linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <circle cx="1280" cy="170" r="170" fill="#f6efe2" opacity=".17" filter="url(#soft)"/>
+  <path d="M0 720 C260 620 455 655 670 595 C925 525 1120 470 1600 545 L1600 1000 L0 1000 Z" fill="#233a59" opacity=".95"/>
+  <path d="M0 792 C310 700 535 750 760 670 C990 590 1230 600 1600 665 L1600 1000 L0 1000 Z" fill="#182a43"/>
+  <g opacity=".95">
+    <rect x="1040" y="385" width="290" height="360" rx="8" fill="#ece1d2"/>
+    <rect x="1085" y="430" width="62" height="78" fill="#2c4668" opacity=".78"/>
+    <rect x="1170" y="430" width="62" height="78" fill="#2c4668" opacity=".78"/>
+    <rect x="1255" y="430" width="42" height="315" fill="#9b2335" opacity=".8"/>
+    <path d="M1008 385 L1185 285 L1360 385 Z" fill="#b79b79"/>
+    <rect x="1090" y="545" width="150" height="200" fill="#f7f1e8"/>
+    <path d="M1090 545 H1240 V745 H1090 Z" fill="none" stroke="#8e6f4e" stroke-width="12"/>
+  </g>
+  <g transform="translate(650 570)">
+    <circle cx="55" cy="-115" r="44" fill="#d9b996"/>
+    <path d="M12 -65 C35 -95 78 -95 100 -65 L136 110 L-25 110 Z" fill="#f1e2cf"/>
+    <path d="M35 -18 L35 110 H76 L76 -18 Z" fill="#13294b" opacity=".95"/>
+  </g>
+  <g transform="translate(520 610)">
+    <circle cx="55" cy="-105" r="42" fill="#9d7159"/>
+    <path d="M10 -55 C35 -88 76 -88 100 -55 L132 100 L-22 100 Z" fill="#a92739"/>
+    <path d="M34 -10 L34 100 H74 L74 -10 Z" fill="#f3ede3" opacity=".9"/>
+  </g>
+  <g transform="translate(780 605)">
+    <circle cx="55" cy="-110" r="43" fill="#bd9278"/>
+    <path d="M8 -58 C34 -88 78 -88 104 -58 L138 105 L-24 105 Z" fill="#1e3656"/>
+    <path d="M30 -8 L80 105 H36 Z" fill="#f5efe5" opacity=".9"/>
+  </g>
+  <path d="M118 160 H455" stroke="#d2b48c" stroke-width="3" opacity=".65"/>
+  <path d="M118 190 H360" stroke="#d2b48c" stroke-width="3" opacity=".35"/>
+  <text x="120" y="128" fill="#f8f1e7" font-family="Georgia, serif" font-size="54" letter-spacing="-2">DAV Chapter 246</text>
+  <text x="122" y="232" fill="#f8f1e7" font-family="Arial, sans-serif" font-size="22" letter-spacing="6">TARRANT COUNTY, TEXAS</text>
+</svg>
